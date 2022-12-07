@@ -2,8 +2,9 @@ import React from 'react'
 
 const Step4 = () => {
   return (
-    <div>
-        <h2>
+    <div className='border-2 border-black'>
+  <div  className='bg-white mx-5 py-8 px-4 rounded-lg shadow-xl'>
+  <h2>
     Finishing up
   </h2>
 <p>
@@ -15,6 +16,7 @@ const Step4 = () => {
     Total (per month/year)
   </p>
 
+  </div>
   <button>
     Go Back
   </button>

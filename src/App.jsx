@@ -7,11 +7,11 @@ import Step5 from "./components/Step5";
 
 function App() {
   return (
-    <div className="border-2 border-red-500 relative">
+    <div className="relative">
       <div>
       <SideBar />
       </div>
-      <div className="absolute top-24 bg-white mx-5 py-8 px-4">
+      <div className="absolute top-24">
       <Step1/>
       <Step2/>
       <Step3/>

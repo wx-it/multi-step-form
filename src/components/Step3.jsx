@@ -2,8 +2,9 @@ import React from 'react'
 
 const Step3 = () => {
   return (
-    <div>
-         <h3>Pick add-ons</h3>
+    <div className='border-2 border-black'>
+      <div className="bg-white mx-5 py-8 px-4 rounded-lg shadow-xl">
+      <h3>Pick add-ons</h3>
          <p>Add-ons help enhance your gaming experience.</p>
 <div>
   <input type="checkbox" name="" id=""/>
@@ -26,6 +27,7 @@ const Step3 = () => {
   <p>+$2/mo</p>
 </div>
 
+      </div>
 <div>
   <button>Go Back</button>  
   <button>Next Step</button>

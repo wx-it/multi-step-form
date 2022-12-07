@@ -2,7 +2,7 @@ import React from 'react'
 
 const Step5 = () => {
   return (
-    <div>
+    <div className='border-2 border-black'>
          <h3>
     Thank you!
   </h3>

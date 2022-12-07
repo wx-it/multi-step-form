@@ -2,7 +2,9 @@ import React from 'react'
 
 const Step2 = () => {
   return (
-  <div>    
+  <div className='border-2 border-black'>    
+  <div className='bg-white mx-5 py-8 px-4 rounded-lg shadow-xl'>
+    
   <h2>Select your plan</h2>
   <p>You have the option of monthly or yearly billing.</p>
 
@@ -22,6 +24,7 @@ const Step2 = () => {
     <p>Monthly</p>
     <p>Yearly</p>
 </div>
+  </div>
 
 <div>
     <button>Go Back</button>
