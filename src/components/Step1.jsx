@@ -2,7 +2,7 @@ import React from 'react'
 
 const Step1 = () => {
   return (
-    <div>
+    <div className="border-2 border-black">
     <div>
         <h1>Personal info</h1>
          <p>Please provide your name, email address, and phone number.</p>
