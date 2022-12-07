@@ -2,7 +2,7 @@ import React from 'react'
 
 const SideBar = () => {
   return (
-    <div className='bg-sidebar h-40 w-full'>
+    <div className='bg-sidebar h-screen w-full bg-no-repeat'>
   <div className='flex justify-center pt-10 space-x-3'>
   <div>
     <span 
