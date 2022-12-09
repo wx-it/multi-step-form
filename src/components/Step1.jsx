@@ -3,7 +3,7 @@ import React from 'react'
 const Step1 = () => {
   return (
     <div className="">
-   <div className='bg-White py-8 px-4 rounded-lg shadow-xl'>
+   <div className='bg-White py-8 px-6 rounded-lg shadow-xl'>
    <div>
         <h1
         className='text-Marine-blue text-xl font-bold'
@@ -53,7 +53,7 @@ const Step1 = () => {
    
      <div>
      <button
-       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4'
+       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
      >
       Next Step
       </button>
