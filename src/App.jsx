@@ -11,7 +11,7 @@ function App() {
       <div>
       <SideBar />
       </div>
-      <div className="absolute top-24">
+      <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2/>
       <Step3/>

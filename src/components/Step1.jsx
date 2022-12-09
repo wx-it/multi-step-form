@@ -3,10 +3,14 @@ import React from 'react'
 const Step1 = () => {
   return (
     <div className="border-2 border-black">
-   <div className='bg-white mx-5 py-8 px-4 rounded-lg shadow-xl'>
+   <div className='bg-White py-8 px-4 rounded-lg shadow-xl'>
    <div>
-        <h1>Personal info</h1>
-         <p>Please provide your name, email address, and phone number.</p>
+        <h1
+        className='text-Marine-blue text-3xl'
+        >Personal info</h1>
+         <p
+         className="text-Cool-gray"
+         >Please provide your name, email address, and phone number.</p>
     </div>
   <label htmlFor="">Name</label>
   <input type="text"  placeholder='e.g. Stephen King'/>
@@ -18,7 +22,14 @@ const Step1 = () => {
   <input type="text" placeholder="e.g. +1 234 567 890"/>
   
    </div>
-  <button>Next Step</button>
+   
+     <div>
+     <button
+       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4'
+     >
+      Next Step
+      </button>
+     </div>
     </div>
   )
 }

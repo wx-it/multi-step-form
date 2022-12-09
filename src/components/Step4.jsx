@@ -3,7 +3,7 @@ import React from 'react'
 const Step4 = () => {
   return (
     <div className='border-2 border-black'>
-  <div  className='bg-white mx-5 py-8 px-4 rounded-lg shadow-xl'>
+  <div  className='bg-White py-8 px-4 rounded-lg shadow-xl'>
   <h2>
     Finishing up
   </h2>
