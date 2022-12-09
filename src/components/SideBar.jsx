@@ -6,25 +6,25 @@ const SideBar = () => {
   <div className='flex justify-center pt-10 space-x-3'>
   <div>
     <span 
-    className='border-White border-2 rounded-full py-2 px-3.5 text-White text-bold text-sm'
+    className='border-White border rounded-full py-2 px-3 text-White text-bold text-sm'
     >1</span>
   </div>
   
   <div>
     <span
-        className='border-White border-2 rounded-full py-2 px-3.5 text-White text-bold text-sm'
+        className='border-White border rounded-full py-2 px-3 text-White text-bold text-sm'
     >2</span>
   </div>
   
   <div>
     <span
-        className='border-White border-2 rounded-full py-2 px-3.5 text-White text-bold text-sm'
+        className='border-White border rounded-full py-2 px-3 text-White text-bold text-sm'
     >3</span>
   </div>
   
   <div>
     <span
-        className='border-White border-2 rounded-full py-2 px-3.5 text-White text-bold text-sm'
+        className='border-White border rounded-full py-2 px-3 text-White text-bold text-sm'
     >4</span>
   </div>
   </div>

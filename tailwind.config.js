@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
 
+    fontSize: {
+      sm: '13px',
+      xl: '24px'
+    },
+
     screens: {
       sm: '375px',
     },
