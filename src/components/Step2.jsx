@@ -31,8 +31,12 @@ const Step2 = () => {
 </div>
   </div>
 
-<div>
-    <button>Go Back</button>
+<div 
+className='flex justify-between'
+>
+    <button
+      className="text-Cool-gray font-medium"
+    >Go Back</button>
     <button
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
     >Next Step</button>
