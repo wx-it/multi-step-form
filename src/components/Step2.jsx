@@ -1,9 +1,16 @@
 import iconArcade from '../assets/images/icon-arcade.svg'
 import iconAdvanced from '../assets/images/icon-advanced.svg'
 import iconPro from '../assets/images/icon-pro.svg'
-
+import { useState } from 'react'
 
 const Step2 = () => {
+
+  //add a toggle function between monthly and yearly
+  const [time, setTime] = useState(false)
+  function toggle() {
+    setTime(time => !time)
+  }
+
   return (
   <div className=''>    
   <div className='bg-White py-8 px-4 rounded-lg shadow-xl'>
@@ -23,7 +30,8 @@ const Step2 = () => {
   </div>
     <div className='block'>
      <h3  className='font-medium text-Marine-blue' >Arcade</h3>
-     <p className='text-Cool-gray text-sm'>$9/mo</p>
+     <p className='text-Cool-gray text-sm'>{time ? "$90/yr" : "$9/mo"}</p>
+     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
     </div>
 </div>
 
@@ -33,7 +41,8 @@ const Step2 = () => {
   </div>
     <div className='block'>
       <h3  className='font-medium text-Marine-blue' >Advanced</h3>
-      <p className='text-Cool-gray text-sm'>$12/mo</p>
+      <p className='text-Cool-gray text-sm'>{time ? "$120/yr" : "$12/mo"}</p>
+     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
     </div>
 </div>
 
@@ -43,7 +52,8 @@ const Step2 = () => {
   </div>
     <div className='block'>
       <h3 className='font-medium text-Marine-blue' >Pro</h3>
-      <p className='text-Cool-gray text-sm'>$15/mo</p>
+      <p className='text-Cool-gray text-sm'>{time ? "$150/yr" : "$15/mo"}</p>
+     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
     </div>
 </div>
 
@@ -51,17 +61,16 @@ const Step2 = () => {
 
 <div className='flex items-center justify-center space-x-3 mt-8'>
   
-    <span className='font-bold text-Marine-blue text-ms' >Monthly</span> 
+    <span className={time ? 'text-Cool-gray font-bold text-ms' : 'font-bold text-Marine-blue text-ms'} >Monthly</span> 
     
     <label className="inline-flex relative items-center cursor-pointer">
-    <input type="checkbox" value="" className="sr-only peer"/>
-    <div 
-    className="w-10 h-5 bg-Marine-blue peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-White 
+    <input onClick={toggle} type="checkbox" value="" className="sr-only peer"/>
+    <div className="w-10 h-5 bg-Marine-blue peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-White 
     rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] 
     after:absolute after:top-[2px] after:left-[3.75px] after:bg-White after:border-Marine-blue after:border 
     after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:Marine-blue"></div>
 </label>
-    <span className='font-bold text-Cool-gray text-ms' >Yearly</span>
+    <span className={time ? 'text-Marine-blue font-bold text-ms' : 'font-bold text-Cool-gray text-ms'}>Yearly</span>
 </div>
   </div>
 
