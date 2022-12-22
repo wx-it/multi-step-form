@@ -3,13 +3,7 @@ import iconAdvanced from '../assets/images/icon-advanced.svg'
 import iconPro from '../assets/images/icon-pro.svg'
 import { useState } from 'react'
 
-const Step2 = () => {
-
-  //add a toggle function between monthly and yearly
-  const [time, setTime] = useState(false)
-  function toggle() {
-    setTime(time => !time)
-  }
+const Step2 = ({time, toggle}) => {
 
   return (
   <div className=''>    

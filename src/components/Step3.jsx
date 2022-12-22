@@ -1,7 +1,7 @@
 import React from 'react'
 import checkMark from '../assets/images/icon-checkmark.svg'
 
-const Step3 = () => {
+const Step3 = ({time}) => {
   return (
     <div>
       <div className="bg-White py-8 px-4 rounded-lg shadow-xl">
@@ -20,7 +20,7 @@ const Step3 = () => {
   <h3 className='font-medium text-Marine-blue'>Online service</h3>
   <p className='text-Cool-gray text-sm'>Access to multiplayer games</p>
   </div>
-  <p className='text-Purplish-blue text-sm'>+$1/mo</p>
+  <p className='text-Purplish-blue text-sm'>{time ? "+$10/yr" : "+$1/mo"}</p>
 </div>
 
 <div className='border border-Light-gray rounded-md flex items-center justify-between p-2'>
@@ -31,7 +31,7 @@ const Step3 = () => {
   <h3 className='font-medium text-Marine-blue'>Larger storage</h3>
   <p  className='text-Cool-gray text-sm'>Extra 1TB of cloud save</p>
   </div>  
-  <p className='text-Purplish-blue text-sm'>+$2/mo</p>
+  <p className='text-Purplish-blue text-sm'>{time ? "+$20/yr" : "+$2/mo"}</p>
 </div>
 
 <div className='border border-Light-gray rounded-md flex items-center justify-between p-2'>
@@ -42,7 +42,7 @@ const Step3 = () => {
   <h3 className='font-medium text-Marine-blue'>Customizable Profile</h3>
   <p  className='text-Cool-gray text-sm'>Custom theme on your profile</p>
   </div>
-  <p className='text-Purplish-blue text-sm'>+$2/mo</p>
+  <p className='text-Purplish-blue text-sm'>{time ? "+$20/yr" : "+$2/mo"}</p>
 </div>
 
 </div>
