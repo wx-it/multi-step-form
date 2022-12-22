@@ -17,40 +17,42 @@ const Step2 = () => {
   >You have the option of monthly or yearly billing.</p>
 
 <div className='space-y-2 mt-5'>
-<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2'>
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue'>
   <div>
     <img src={iconArcade} alt="" />
   </div>
     <div className='block'>
-     <h3>Arcade</h3>
-     <p>$9/mo</p>
+     <h3  className='font-medium text-Marine-blue' >Arcade</h3>
+     <p className='text-Cool-gray text-sm'>$9/mo</p>
     </div>
 </div>
 
-<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2' >
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue' >
 <div>
     <img src={iconAdvanced} alt="" />
   </div>
     <div className='block'>
-      <h3>Advanced</h3>
-      <p>$12/mo</p>
+      <h3  className='font-medium text-Marine-blue' >Advanced</h3>
+      <p className='text-Cool-gray text-sm'>$12/mo</p>
     </div>
 </div>
 
-<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2' >
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue' >
 <div>
     <img src={iconPro} alt="" />
   </div>
     <div className='block'>
-      <h3>Pro</h3>
-      <p>$15/mo</p>
+      <h3 className='font-medium text-Marine-blue' >Pro</h3>
+      <p className='text-Cool-gray text-sm'>$15/mo</p>
     </div>
 </div>
 
 </div>
 
-<div className='flex items-center justify-center space-x-3 mt-3'>
-    <span>Monthly</span> 
+<div className='flex items-center justify-center space-x-3 mt-8'>
+  
+    <span className='font-bold text-Marine-blue text-ms' >Monthly</span> 
+    
     <label className="inline-flex relative items-center cursor-pointer">
     <input type="checkbox" value="" className="sr-only peer"/>
     <div 
@@ -59,7 +61,7 @@ const Step2 = () => {
     after:absolute after:top-[2px] after:left-[3.75px] after:bg-White after:border-Marine-blue after:border 
     after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:Marine-blue"></div>
 </label>
-    <span>Yearly</span>
+    <span className='font-bold text-Cool-gray text-ms' >Yearly</span>
 </div>
   </div>
 
