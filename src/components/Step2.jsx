@@ -1,4 +1,7 @@
-import React from 'react'
+import iconArcade from '../assets/images/icon-arcade.svg'
+import iconAdvanced from '../assets/images/icon-advanced.svg'
+import iconPro from '../assets/images/icon-pro.svg'
+
 
 const Step2 = () => {
   return (
@@ -13,18 +16,39 @@ const Step2 = () => {
    className="text-Cool-gray w-72 my-1"
   >You have the option of monthly or yearly billing.</p>
 
-<div>
-    <h3>Arcade</h3>
-    <p>$9/mo</p>
+<div className='space-y-2 mt-5'>
+<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2'>
+  <div>
+    <img src={iconArcade} alt="" />
+  </div>
+    <div className='block'>
+     <h3>Arcade</h3>
+     <p>$9/mo</p>
+    </div>
 </div>
+
+<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2' >
 <div>
-    <h3>Advanced</h3>
-    <p>$12/mo</p>
+    <img src={iconAdvanced} alt="" />
+  </div>
+    <div className='block'>
+      <h3>Advanced</h3>
+      <p>$12/mo</p>
+    </div>
 </div>
+
+<div className='flex border-2 border-black rounded-md items-center space-x-4 p-2' >
 <div>
-    <h3>Pro</h3>
-    <p>$15/mo</p>
+    <img src={iconPro} alt="" />
+  </div>
+    <div className='block'>
+      <h3>Pro</h3>
+      <p>$15/mo</p>
+    </div>
 </div>
+
+</div>
+
 <div>
     <p>Monthly</p>
     <p>Yearly</p>
