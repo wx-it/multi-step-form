@@ -18,7 +18,7 @@ const Step2 = ({time, toggle}) => {
   >You have the option of monthly or yearly billing.</p>
 
 <div className='space-y-2 mt-5'>
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue'>
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue'>
   <div>
     <img src={iconArcade} alt="" />
   </div>
@@ -29,7 +29,7 @@ const Step2 = ({time, toggle}) => {
     </div>
 </div>
 
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue' >
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue' >
 <div>
     <img src={iconAdvanced} alt="" />
   </div>
@@ -40,7 +40,7 @@ const Step2 = ({time, toggle}) => {
     </div>
 </div>
 
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 active:border-Purplish-blue' >
+<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue' >
 <div>
     <img src={iconPro} alt="" />
   </div>

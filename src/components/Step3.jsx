@@ -1,7 +1,14 @@
 import React from 'react'
 import checkMark from '../assets/images/icon-checkmark.svg'
+import { useState } from 'react'
 
 const Step3 = ({time}) => {
+
+  const [color, setColor] = useState(false)
+  function toggleC() {
+    setColor(color => !color)
+  }
+
   return (
     <div>
       <div className="bg-White py-8 px-4 rounded-lg shadow-xl">
@@ -12,8 +19,12 @@ const Step3 = ({time}) => {
        className="text-Cool-gray w-72 my-1"   
          >Add-ons help enhance your gaming experience.</p>
 <div className='space-y-2 mt-5'>
-<div className='border border-Light-gray rounded-md flex items-center justify-between p-2'>
-  <div className="bg-Purplish-blue w-5 h-5 rounded-md p-1 flex items-center justify-center">
+<div  onClick={toggleC}
+className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
+'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
+  <div
+  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
+  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
     <img src={checkMark} alt="" />
   </div>
   <div>
@@ -23,8 +34,12 @@ const Step3 = ({time}) => {
   <p className='text-Purplish-blue text-sm'>{time ? "+$10/yr" : "+$1/mo"}</p>
 </div>
 
-<div className='border border-Light-gray rounded-md flex items-center justify-between p-2'>
-    <div className="bg-Purplish-blue w-5 h-5 rounded-md p-1 flex items-center justify-center">
+<div onClick={toggleC}
+className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
+'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
+  <div
+  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
+  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
     <img src={checkMark} alt="" />
   </div>  
   <div>
@@ -34,8 +49,12 @@ const Step3 = ({time}) => {
   <p className='text-Purplish-blue text-sm'>{time ? "+$20/yr" : "+$2/mo"}</p>
 </div>
 
-<div className='border border-Light-gray rounded-md flex items-center justify-between p-2'>
-    <div className="bg-Purplish-blue w-5 h-5 rounded-md p-1 flex items-center justify-center">
+<div onClick={toggleC}
+className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
+'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
+  <div
+  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
+  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
     <img src={checkMark} alt="" />
   </div>
   <div>
