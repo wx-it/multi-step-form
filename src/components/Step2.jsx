@@ -49,9 +49,17 @@ const Step2 = () => {
 
 </div>
 
-<div>
-    <p>Monthly</p>
-    <p>Yearly</p>
+<div className='flex items-center justify-center space-x-3 mt-3'>
+    <span>Monthly</span> 
+    <label className="inline-flex relative items-center cursor-pointer">
+    <input type="checkbox" value="" className="sr-only peer"/>
+    <div 
+    className="w-10 h-5 bg-Marine-blue peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-White 
+    rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] 
+    after:absolute after:top-[2px] after:left-[3.75px] after:bg-White after:border-Marine-blue after:border 
+    after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:Marine-blue"></div>
+</label>
+    <span>Yearly</span>
 </div>
   </div>
 
