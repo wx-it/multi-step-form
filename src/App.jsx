@@ -4,6 +4,8 @@ import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
 import Step4 from "./components/Step4";
 import Step5 from "./components/Step5";
+import Divs from "./components/Divs";
+import data from "./data";
 import { useState } from "react";
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
   function toggle() {
     setTime(time => !time)
   }
+
   return (
     <div className="relative">
       <div>
@@ -20,7 +23,7 @@ function App() {
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} />
-      <Step3 time={time} />
+      <Step3 time={time} data={data} />
       <Step4/>
       <Step5/>
 

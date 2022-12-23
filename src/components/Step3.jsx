@@ -1,13 +1,28 @@
 import React from 'react'
-import checkMark from '../assets/images/icon-checkmark.svg'
 import { useState } from 'react'
+import data from '../data'
+import Divs from './Divs'
 
-const Step3 = ({time}) => {
 
+const Step3 = ({time, data}) => {
+
+  const div = document.querySelectorAll('#yeet')
   const [color, setColor] = useState(false)
-  function toggleC() {
+  function toggleC(e) {
+    if(e.target === div)
     setColor(color => !color)
   }
+
+
+  
+  const getData = data.map((data)=>{
+    return <Divs 
+                  key={data.id} 
+                  data={data}
+                  time={time}
+                  color={color}
+                  />
+  })
 
   return (
     <div>
@@ -19,51 +34,7 @@ const Step3 = ({time}) => {
        className="text-Cool-gray w-72 my-1"   
          >Add-ons help enhance your gaming experience.</p>
 <div className='space-y-2 mt-5'>
-<div  onClick={toggleC}
-className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
-'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
-  <div
-  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
-  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
-    <img src={checkMark} alt="" />
-  </div>
-  <div>
-  <h3 className='font-medium text-Marine-blue'>Online service</h3>
-  <p className='text-Cool-gray text-sm'>Access to multiplayer games</p>
-  </div>
-  <p className='text-Purplish-blue text-sm'>{time ? "+$10/yr" : "+$1/mo"}</p>
-</div>
-
-<div onClick={toggleC}
-className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
-'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
-  <div
-  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
-  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
-    <img src={checkMark} alt="" />
-  </div>  
-  <div>
-  <h3 className='font-medium text-Marine-blue'>Larger storage</h3>
-  <p  className='text-Cool-gray text-sm'>Extra 1TB of cloud save</p>
-  </div>  
-  <p className='text-Purplish-blue text-sm'>{time ? "+$20/yr" : "+$2/mo"}</p>
-</div>
-
-<div onClick={toggleC}
-className={color ? 'border border-Purplish-blue rounded-md flex items-center justify-between p-2' : 
-'border border-Light-gray rounded-md flex items-center justify-between p-2'}>
-  <div
-  className={color ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center" 
-  : "bg-none border-Light-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
-    <img src={checkMark} alt="" />
-  </div>
-  <div>
-  <h3 className='font-medium text-Marine-blue'>Customizable Profile</h3>
-  <p  className='text-Cool-gray text-sm'>Custom theme on your profile</p>
-  </div>
-  <p className='text-Purplish-blue text-sm'>{time ? "+$20/yr" : "+$2/mo"}</p>
-</div>
-
+{getData}
 </div>
       </div>
 
