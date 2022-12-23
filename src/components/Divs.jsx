@@ -19,13 +19,13 @@ const Divs = ({data, color, time}) => {
     }
 
   return (
-    <div className='border border-Purplish-blue rounded-md flex items-center justify-between p-2'>
+    <div className='border border-Purplish-blue rounded-md flex items-center justify-between py-2 px-3'>
  
-  <div className="bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-2 flex items-center justify-center">
+  <div className="bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center">
     <img src={checkMark} alt="" />
   </div>
 
-  <div className='border border-black'>
+  <div className=''>
      <h3 className='font-medium text-Marine-blue'>{data.title} </h3>
      <p className='text-Cool-gray text-sm'>{data.description}</p>
    </div>
