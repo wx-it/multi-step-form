@@ -9,12 +9,17 @@ const Step2 = ({time, toggle}) => {
 
   const [squares, setSquares] = useState(plansData)
 
-  function toggleSquare(id) {
-    setSquares(prevSquares => {
-        return prevSquares.map((square) => {
-            return square.id === id ? {...square, on: !square.on} : square
-        })
-    })
+  const toggleSquare = function(e) {    
+    const theAnswers = e.target.closest('.boxes');
+    const theAnswer = e.target.closest('.box');
+    const all = theAnswers.querySelectorAll('.box')
+    if(!theAnswers)return; 
+    all.forEach((answer) => {
+      answer.classList.remove("border-Purplish-blue")
+      answer.classList.add("border-Light-gray")
+    });
+    theAnswer.classList.add("border-Purplish-blue");
+    theAnswer.classList.remove("border-Light-gray")
 }
   
   const getData = squares.map(data =>{
@@ -30,7 +35,7 @@ const Step2 = ({time, toggle}) => {
       }
   }
     return(
-      <div onClick={()=>{toggleSquare(data.id)}} key={data.id} className={data.on ? 'flex border border-Purplish-blue rounded-lg items-center space-x-4 py-2 p-4' : 'flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'}>
+      <div id='box' onClick={(e)=>{toggleSquare(e)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
   <div>
     <img src={data.image} alt="" />
   </div>
@@ -45,7 +50,7 @@ const Step2 = ({time, toggle}) => {
   })
 
   return (
-  <div className=''>    
+  <div>    
   <div className='bg-White py-8 px-4 rounded-lg shadow-xl'>
     
   <h2
@@ -56,7 +61,7 @@ const Step2 = ({time, toggle}) => {
    className="text-Cool-gray w-72 my-1"
   >You have the option of monthly or yearly billing.</p>
 
-<div className='space-y-2 mt-5'>
+<div id='boxes' className='boxes space-y-2 mt-5'>
 {getData}
 
 </div>
