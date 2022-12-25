@@ -9,6 +9,13 @@ const Step2 = ({time, toggle}) => {
 
   const [squares, setSquares] = useState(plansData)
 
+  function toggleSquare(id) {
+    setSquares(prevSquares => {
+        return prevSquares.map((square) => {
+            return square.id === id ? {...square, on: !square.on} : square
+        })
+    })
+}
   
   const getData = squares.map(data =>{
     function Price(){
@@ -23,7 +30,7 @@ const Step2 = ({time, toggle}) => {
       }
   }
     return(
-      <div key={data.id} className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
+      <div onClick={()=>{toggleSquare(data.id)}} key={data.id} className={data.on ? 'flex border border-Purplish-blue rounded-lg items-center space-x-4 py-2 p-4' : 'flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'}>
   <div>
     <img src={data.image} alt="" />
   </div>
