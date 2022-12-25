@@ -1,8 +1,8 @@
-import React from 'react'
+import data from '../data'
 import checkMark from '../assets/images/icon-checkmark.svg'
+import { useState } from 'react'
 
-
-const Divs = ({data, color, time}) => {
+const Divs = ({data, time, toggle, on, id}) => {
 
     let monthly = data.monthly
     let yearly = data.yearly
@@ -19,9 +19,12 @@ const Divs = ({data, color, time}) => {
     }
 
   return (
-    <div className='border border-Purplish-blue rounded-md flex items-center justify-between py-2 px-3'>
+    <div onClick={()=>{toggle(id)}} 
+    className={on ? 'border border-Purplish-blue rounded-md flex items-center justify-between py-2 px-3' 
+    : 'border border-Cool-gray rounded-md flex items-center justify-between py-2 px-3'}>
  
-  <div className="bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center">
+  <div className={on ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"
+  : "bg-transparent border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"}>
     <img src={checkMark} alt="" />
   </div>
 

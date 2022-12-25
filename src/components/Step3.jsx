@@ -5,22 +5,26 @@ import Divs from './Divs'
 
 
 const Step3 = ({time, data}) => {
-
-  const div = document.querySelectorAll('#yeet')
-  const [color, setColor] = useState(false)
-  function toggleC(e) {
-    if(e.target === div)
-    setColor(color => !color)
-  }
-
-
   
-  const getData = data.map((data)=>{
+  const [squares, setSquares] = useState(data)
+
+   
+  function toggle(id) {
+    setSquares(prevSquares => {
+        return prevSquares.map((square) => {
+            return square.id === id ? {...square, on: !square.on} : square
+        })
+    })
+}
+
+  const getData = squares.map((data)=>{
     return <Divs 
                   key={data.id} 
+                  id={data.id}
+                  on={data.on}
+                  toggle={toggle}
                   data={data}
                   time={time}
-                  color={color}
                   />
   })
 
