@@ -2,8 +2,40 @@ import iconArcade from '../assets/images/icon-arcade.svg'
 import iconAdvanced from '../assets/images/icon-advanced.svg'
 import iconPro from '../assets/images/icon-pro.svg'
 import { useState } from 'react'
+import plansData from '../plansData'
+import data from '../data'
 
 const Step2 = ({time, toggle}) => {
+
+  const [squares, setSquares] = useState(plansData)
+
+  
+  const getData = squares.map(data =>{
+    function Price(){
+      if(time=== true){
+          return(
+           <p className='text-Cool-gray text-sm'>{data.yearly}</p>
+          )
+      } else{
+          return(
+           <p className='text-Cool-gray text-sm'>{data.monthly}</p>
+          )
+      }
+  }
+    return(
+      <div key={data.id} className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
+  <div>
+    <img src={data.image} alt="" />
+  </div>
+    <div className='block'>
+     <h3  className='font-medium text-Marine-blue' >{data.title}</h3>
+     <Price/>
+     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
+    </div>
+</div>
+
+    )
+  })
 
   return (
   <div className=''>    
@@ -18,38 +50,7 @@ const Step2 = ({time, toggle}) => {
   >You have the option of monthly or yearly billing.</p>
 
 <div className='space-y-2 mt-5'>
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue'>
-  <div>
-    <img src={iconArcade} alt="" />
-  </div>
-    <div className='block'>
-     <h3  className='font-medium text-Marine-blue' >Arcade</h3>
-     <p className='text-Cool-gray text-sm'>{time ? "$90/yr" : "$9/mo"}</p>
-     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
-    </div>
-</div>
-
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue' >
-<div>
-    <img src={iconAdvanced} alt="" />
-  </div>
-    <div className='block'>
-      <h3  className='font-medium text-Marine-blue' >Advanced</h3>
-      <p className='text-Cool-gray text-sm'>{time ? "$120/yr" : "$12/mo"}</p>
-     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
-    </div>
-</div>
-
-<div className='flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 hover:border-Purplish-blue' >
-<div>
-    <img src={iconPro} alt="" />
-  </div>
-    <div className='block'>
-      <h3 className='font-medium text-Marine-blue' >Pro</h3>
-      <p className='text-Cool-gray text-sm'>{time ? "$150/yr" : "$15/mo"}</p>
-     {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
-    </div>
-</div>
+{getData}
 
 </div>
 
