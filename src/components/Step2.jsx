@@ -13,11 +13,11 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
     function Price(){
       if(time=== true){
           return(
-           <p className='text-Cool-gray text-sm'>{data.yearly}</p>
+           <p className='text-Cool-gray text-sm'>${data.yearly}/yr</p>
           )
       } else{
           return(
-           <p className='text-Cool-gray text-sm'>{data.monthly}</p>
+           <p className='text-Cool-gray text-sm'>${data.monthly}/mo</p>
           )
       }
   }

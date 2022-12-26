@@ -13,6 +13,7 @@ function App() {
 
   const [time, setTime] = useState(false)
   const [boxes, setBoxes] = useState(plansData)
+  const [squares, setSquares] = useState(data)
 
   function toggle() {
     setTime(time => !time)
@@ -35,6 +36,26 @@ function App() {
     theBox.classList.add("border-Purplish-blue");
     theBox.classList.remove("border-Light-gray")
 }
+   
+function toggleSquare(id) {
+  setSquares(prevSquares => {
+      return prevSquares.map((square) => {
+          return square.id === id ? {...square, on: !square.on} : square
+      })
+  })
+}
+
+
+function getAll(){
+  let allItems = []
+  let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
+  let b = boxes.map(box => box.on ? allItems.push(box.monthly) : box)
+  console.log(allItems.reduce((total, item) =>{
+    return item + total
+  }, 0))
+}
+getAll()
+
 
   return (
     <div className="relative">
@@ -44,7 +65,7 @@ function App() {
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3 time={time} data={data} />
+      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} />
       <Step4/>
       <Step5/>
 

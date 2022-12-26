@@ -8,16 +8,16 @@ export default [
         id: 1,
         on: false,
         title: "Arcade",
-        monthly: "$9/mo",
-        yearly: "$90/yr",
+        monthly: 9,
+        yearly: 90,
         image: arcade
     },
     {
         id: 2,
         on: false,
         title: "Advanced",
-        monthly: "$12/mo",
-        yearly: "$120/yr",
+        monthly: 12,
+        yearly: 120,
         image: advanced
 
     },
@@ -25,8 +25,8 @@ export default [
         id: 3,
         on: false,
         title: "Pro",
-        monthly: "$15/mo",
-        yearly: "$150/yr",
+        monthly: 15,
+        yearly: 150,
         image: pro
     }
 ]

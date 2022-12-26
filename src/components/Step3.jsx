@@ -4,25 +4,15 @@ import data from '../data'
 import Divs from './Divs'
 
 
-const Step3 = ({time, data}) => {
+const Step3 = ({time, data, squares, toggleSquare}) => {
   
-  const [squares, setSquares] = useState(data)
-
-   
-  function toggle(id) {
-    setSquares(prevSquares => {
-        return prevSquares.map((square) => {
-            return square.id === id ? {...square, on: !square.on} : square
-        })
-    })
-}
 
   const getData = squares.map((data)=>{
     return <Divs 
                   key={data.id} 
                   id={data.id}
                   on={data.on}
-                  toggle={toggle}
+                  toggle={toggleSquare}
                   data={data}
                   time={time}
                   />
