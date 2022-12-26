@@ -5,27 +5,8 @@ import { useState } from 'react'
 import plansData from '../plansData'
 import data from '../data'
 
-const Step2 = ({time, toggle}) => {
-
-  const [boxes, setBoxes] = useState(plansData)
-
-  const toggleSquare = function(e, id) {    
-    const theBoxes = e.target.closest('.boxes');
-    const theBox = e.target.closest('.box');
-    const all = theBoxes.querySelectorAll('.box')
-    if(!theBoxes)return; 
-    all.forEach((box) => {
-      box.classList.remove("border-Purplish-blue")
-      box.classList.add("border-Light-gray")
-      return setBoxes(prevBoxes => {
-        return prevBoxes.map((box) => {
-            return box.id === id ? {...box, on: !box.on} : box
-        })
-      })
-    });
-    theBox.classList.add("border-Purplish-blue");
-    theBox.classList.remove("border-Light-gray")
-}
+const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
+  
 
   
   const getData = boxes.map(data =>{
@@ -41,7 +22,7 @@ const Step2 = ({time, toggle}) => {
       }
   }
     return(
-      <div id='box' onClick={(e)=>{toggleSquare(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
+      <div id='box' onClick={(e)=>{toggleBoxes(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
   <div>
     <img src={data.image} alt="" />
   </div>
