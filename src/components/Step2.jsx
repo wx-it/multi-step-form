@@ -17,9 +17,9 @@ const Step2 = ({time, toggle}) => {
     all.forEach((box) => {
       box.classList.remove("border-Purplish-blue")
       box.classList.add("border-Light-gray")
-      return setBoxes(prevSquares => {
-        return prevSquares.map((square) => {
-            return square.id === id ? {...square, on: !square.on} : square
+      return setBoxes(prevBoxes => {
+        return prevBoxes.map((box) => {
+            return box.id === id ? {...box, on: !box.on} : box
         })
       })
     });
