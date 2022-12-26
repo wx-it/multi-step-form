@@ -9,7 +9,7 @@ const Step2 = ({time, toggle}) => {
 
   const [squares, setSquares] = useState(plansData)
 
-  const toggleSquare = function(e) {    
+  const toggleSquare = function(e, id) {    
     const theAnswers = e.target.closest('.boxes');
     const theAnswer = e.target.closest('.box');
     const all = theAnswers.querySelectorAll('.box')
@@ -17,10 +17,16 @@ const Step2 = ({time, toggle}) => {
     all.forEach((answer) => {
       answer.classList.remove("border-Purplish-blue")
       answer.classList.add("border-Light-gray")
+      return setSquares(prevSquares => {
+        return prevSquares.map((square) => {
+            return square.id === id ? {...square, on: !square.on} : square
+        })
+      })
     });
     theAnswer.classList.add("border-Purplish-blue");
     theAnswer.classList.remove("border-Light-gray")
 }
+
   
   const getData = squares.map(data =>{
     function Price(){
@@ -35,7 +41,7 @@ const Step2 = ({time, toggle}) => {
       }
   }
     return(
-      <div id='box' onClick={(e)=>{toggleSquare(e)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
+      <div id='box' onClick={(e)=>{toggleSquare(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
   <div>
     <img src={data.image} alt="" />
   </div>
