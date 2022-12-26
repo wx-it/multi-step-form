@@ -7,28 +7,28 @@ import data from '../data'
 
 const Step2 = ({time, toggle}) => {
 
-  const [squares, setSquares] = useState(plansData)
+  const [boxes, setBoxes] = useState(plansData)
 
   const toggleSquare = function(e, id) {    
-    const theAnswers = e.target.closest('.boxes');
-    const theAnswer = e.target.closest('.box');
-    const all = theAnswers.querySelectorAll('.box')
-    if(!theAnswers)return; 
-    all.forEach((answer) => {
-      answer.classList.remove("border-Purplish-blue")
-      answer.classList.add("border-Light-gray")
-      return setSquares(prevSquares => {
+    const theBoxes = e.target.closest('.boxes');
+    const theBox = e.target.closest('.box');
+    const all = theBoxes.querySelectorAll('.box')
+    if(!theBoxes)return; 
+    all.forEach((box) => {
+      box.classList.remove("border-Purplish-blue")
+      box.classList.add("border-Light-gray")
+      return setBoxes(prevSquares => {
         return prevSquares.map((square) => {
             return square.id === id ? {...square, on: !square.on} : square
         })
       })
     });
-    theAnswer.classList.add("border-Purplish-blue");
-    theAnswer.classList.remove("border-Light-gray")
+    theBox.classList.add("border-Purplish-blue");
+    theBox.classList.remove("border-Light-gray")
 }
 
   
-  const getData = squares.map(data =>{
+  const getData = boxes.map(data =>{
     function Price(){
       if(time=== true){
           return(
