@@ -46,13 +46,13 @@ function toggleSquare(id) {
 }
 
 
-function getAll(){
+function getAll(id){
   let allItems = []
   let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
   let b = boxes.map(box => box.on ? allItems.push(box.monthly) : box)
-  console.log(allItems.reduce((total, item) =>{
+  return allItems.reduce((total, item) =>{
     return item + total
-  }, 0))
+  }, 0)
 }
 getAll()
 

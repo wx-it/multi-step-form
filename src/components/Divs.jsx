@@ -9,11 +9,11 @@ const Divs = ({data, time, toggle, on, id}) => {
     function Price(){
         if(time=== true){
             return(
-                <p className='text-Purplish-blue text-sm'>{data.yearly}</p>
+                <p className='text-Purplish-blue text-sm'>+${data.yearly}/yr</p>
             )
         } else{
             return(
-                <p className='text-Purplish-blue text-sm'>{data.monthly}</p>
+                <p className='text-Purplish-blue text-sm'>+${data.monthly}/mo</p>
             )
         }
     }
