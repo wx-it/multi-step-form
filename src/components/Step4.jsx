@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Step4 = () => {
+const Step4 = ({total, getAll}) => {
   return (
     <div className=''>
   <div  className='bg-White py-8 px-4 rounded-lg shadow-xl'>
@@ -12,6 +12,14 @@ const Step4 = () => {
    className="text-Cool-gray w-72 my-1">
   Double-check everything looks OK before confirming.
 </p>
+
+<div className="flex justify-between items-center border">
+  <div className='space-y-1'>
+    <p className='text-Marine-blue font-bold text-ms' >Arcade (Monthly)</p>
+    <button className='text-Cool-gray' >Change</button>
+  </div>
+  <p>${total.monthly}/mo</p>
+</div>
   // Dynamically add subscription and add-on selections here
 
   <p>

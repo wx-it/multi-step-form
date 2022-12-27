@@ -14,6 +14,10 @@ function App() {
   const [time, setTime] = useState(false)
   const [boxes, setBoxes] = useState(plansData)
   const [squares, setSquares] = useState(data)
+  const [total, setTotal] = useState({
+    monthly: '',
+    yearly:''
+  })
 
   function toggle() {
     setTime(time => !time)
@@ -50,12 +54,17 @@ function getAll(id){
   let allItems = []
   let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
   let b = boxes.map(box => box.on ? allItems.push(box.monthly) : box)
-  return allItems.reduce((total, item) =>{
+  let totalMonthly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
-}
-getAll()
 
+  return setTotal(prevTotal => {
+  return{
+    ...prevTotal,
+    monthly: totalMonthly
+  }
+ }) 
+}
 
   return (
     <div className="relative">
@@ -65,9 +74,9 @@ getAll()
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} />
-      <Step4/>
-      <Step5/>
+      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} />
+      <Step4 total={total} />
+      <Step5  />
 
       </div>
     </div>
