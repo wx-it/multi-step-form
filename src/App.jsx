@@ -70,10 +70,8 @@ function getAll(id){
 const [addOns, setAddons] = useState([])
 
 function getSquares(){
-  console.log(addOns.map(item => item))
   return setAddons(preAddOns => {
-    squares.map(square => square.on ? preAddOns.push(square) : square)
-    return preAddOns.map(item => item)
+    return squares.map(square => square.on ? preAddOns.push(square) : square)
   })
 }
 

@@ -1,6 +1,14 @@
 import React from 'react'
 
 const Step4 = ({total, addOns}) => {
+  
+  function GetAddOns(){
+    addOns.map(item => {
+      return(
+        <p>{item.title}</p>
+      )
+    })
+  }
 
   return (
     <div className=''>
@@ -22,7 +30,7 @@ const Step4 = ({total, addOns}) => {
   <p className='font-bold text-Marine-blue' >${total.monthly}/mo</p>
 </div>
   <div>
-
+    <GetAddOns />
   </div>
 
   <p>
