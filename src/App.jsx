@@ -50,6 +50,7 @@ function toggleSquare(id) {
 }
 
 
+
 function getAll(id){
   let allItems = []
   let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
@@ -57,14 +58,26 @@ function getAll(id){
   let totalMonthly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
-
+  
   return setTotal(prevTotal => {
-  return{
-    ...prevTotal,
-    monthly: totalMonthly
-  }
- }) 
+    return{
+      ...prevTotal,
+      monthly: totalMonthly
+    }
+  }) 
 }
+
+const [addOns, setAddons] = useState([])
+
+function getSquares(){
+  console.log(addOns.map(item => item))
+  return setAddons(preAddOns => {
+    squares.map(square => square.on ? preAddOns.push(square) : square)
+    return preAddOns.map(item => item)
+  })
+}
+
+
 
   return (
     <div className="relative">
@@ -74,8 +87,8 @@ function getAll(id){
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} />
-      <Step4 total={total} />
+      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} getSquares={getSquares} />
+      <Step4 total={total} addOns={addOns} />
       <Step5  />
 
       </div>
