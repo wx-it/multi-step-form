@@ -4,7 +4,6 @@ import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
 import Step4 from "./components/Step4";
 import Step5 from "./components/Step5";
-import Divs from "./components/Divs";
 import data from "./data";
 import plansData from "./plansData";
 import { useState } from "react";
@@ -127,10 +126,17 @@ function getSquares(){
        toggleSquare={toggleSquare} 
        getSquares={getSquares} 
        getBoxes={getBoxes} 
-       change={change} 
        getAll={getAll}
        />
-      <Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change} />
+      <Step4
+       total={total} 
+       addOns={addOns} 
+       plans={plans} 
+       toggle={toggle} 
+       time={time} 
+       toggleChange={toggleChange} 
+       change={change} 
+       />
       <Step5  />
 
       </div>
