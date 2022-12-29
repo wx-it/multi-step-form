@@ -20,6 +20,11 @@ function App() {
   })
   const [addOns, setAddons] = useState([])
   const [plans, setPlans] = useState([])
+  const [change, setChange] = useState(false)
+
+  function toggleChange() {
+    setChange(prevChange => !prevChange)
+  }
   
   function toggle() {
     setTime(time => !time)
@@ -51,9 +56,10 @@ function toggleSquare(id) {
   })
 }
 
+function getAll() {
+  
 
-
-function getAll(id){
+function getMonthlyTotal(id){
   let allItems = []
   let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
   let b = boxes.map(box => box.on ? allItems.push(box.monthly) : box)
@@ -67,6 +73,27 @@ function getAll(id){
       monthly: totalMonthly
     }
   }) 
+}
+
+function getYearlyTotal(id){
+  let allItems = []
+  let s = squares.map(square => square.on ? allItems.push(square.yearly) : square)
+  let b = boxes.map(box => box.on ? allItems.push(box.yearly) : box)
+  let totalYearly =  allItems.reduce((total, item) =>{
+    return item + total
+  }, 0)
+  
+  return setTotal(prevTotal => {
+    return{
+      ...prevTotal,
+      yearly: totalYearly
+    }
+  }) 
+}
+
+getMonthlyTotal()
+getYearlyTotal()
+
 }
 
 function getBoxes(){
@@ -85,8 +112,6 @@ function getSquares(){
   })
 }
 
-
-
   return (
     <div className="relative">
       <div>
@@ -95,8 +120,17 @@ function getSquares(){
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} getSquares={getSquares} getBoxes={getBoxes} />
-      <Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} />
+      <Step3
+       time={time}
+       data={data}
+       squares={squares} 
+       toggleSquare={toggleSquare} 
+       getSquares={getSquares} 
+       getBoxes={getBoxes} 
+       change={change} 
+       getAll={getAll}
+       />
+      <Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change} />
       <Step5  />
 
       </div>

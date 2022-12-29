@@ -1,11 +1,6 @@
 import { useState } from 'react'
 
-const Step4 = ({total, addOns, plans, toggle}) => {
-
-  const [change, setChange] = useState(false)
-  function toggleChange() {
-    setChange(prevChange => !prevChange)
-  }
+const Step4 = ({total, addOns, plans, toggleChange, change}) => {
   
   let all = addOns.map(item => item).filter(item => item.title !== undefined)
 
@@ -57,9 +52,7 @@ let GetAddOns = all.map(item => {
   <p className='text-Cool-gray' >
     Total (per month)
   </p>
-  <p className='font-bold text-Purplish-blue'>
-    +${total.monthly}/mo
-  </p>
+  {change ? <p className='text-Purplish-blue font-bold'>${total.yearly}/yr</p> : <p className='text-Purplish-blue font-bold'>${total.monthly}/mo</p> }
   </div>
 
   </div>

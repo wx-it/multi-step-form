@@ -4,7 +4,7 @@ import data from '../data'
 import Divs from './Divs'
 
 
-const Step3 = ({time, data, squares, toggleSquare, getAll, getSquares, getBoxes}) => {
+const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}) => {
   
 
   const getData = squares.map((data)=>{
@@ -39,7 +39,7 @@ className='flex justify-between'
       className="text-Cool-gray font-medium"
     >Go Back</button>
     <button
-       onClick={()=>{getAll(); getSquares(); getBoxes()}}
+       onClick={()=>{getAll(); getSquares(); getBoxes();}}
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
     >Next Step</button>
 </div>
