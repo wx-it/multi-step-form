@@ -1,14 +1,18 @@
 import React from 'react'
 
 const Step4 = ({total, addOns}) => {
-  
-  function GetAddOns(){
-    addOns.map(item => {
+
+  let all = addOns.map(item => item).filter(item => item.title !== undefined)
+
+let GetAddOns = all.map(item => {
       return(
-        <p>{item.title}</p>
+        <div className='flex justify-between'>
+          <p className='text-Cool-gray' >{item.title}</p>
+          <p className='font-normal' >+${item.monthly}/mo</p>
+        </div>
       )
     })
-  }
+  
 
   return (
     <div className=''>
@@ -29,13 +33,18 @@ const Step4 = ({total, addOns}) => {
   </div>
   <p className='font-bold text-Marine-blue' >${total.monthly}/mo</p>
 </div>
-  <div>
-    <GetAddOns />
+  <div className='space-y-2 mt-3'>
+    {GetAddOns}
   </div>
 
-  <p>
-    Total (per month/year)
+  <div className='flex justify-between items-center mt-8 '>
+  <p className='text-Cool-gray' >
+    Total (per month)
   </p>
+  <p className='font-bold text-Purplish-blue'>
+    +${total.monthly}/mo
+  </p>
+  </div>
 
   </div>
   <div 
