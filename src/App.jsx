@@ -68,6 +68,15 @@ function getAll(id){
 }
 
 const [addOns, setAddons] = useState([])
+const [plans, setPlans] = useState([])
+
+function getBoxes(){
+  return setPlans(prevPlans => {
+    return boxes.map((box=>{
+     return box.on ? box : prevPlans.push(box) ; 
+    }))
+  })
+}
 
 function getSquares(){
   return setAddons(preAddOns => {
@@ -87,8 +96,8 @@ function getSquares(){
       <div className="absolute top-24 mx-5">
       <Step1/>
       <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} getSquares={getSquares} />
-      <Step4 total={total} addOns={addOns} />
+      <Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getAll={getAll} getSquares={getSquares} getBoxes={getBoxes} />
+      <Step4 total={total} addOns={addOns} plans={plans} />
       <Step5  />
 
       </div>
