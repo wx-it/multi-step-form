@@ -1,14 +1,20 @@
-import React from 'react'
+import { useState } from 'react'
 
-const Step4 = ({total, addOns, plans}) => {
+const Step4 = ({total, addOns, plans, toggle}) => {
 
+  const [change, setChange] = useState(false)
+  function toggleChange() {
+    setChange(prevChange => !prevChange)
+  }
+  
   let all = addOns.map(item => item).filter(item => item.title !== undefined)
 
 let GetAddOns = all.map(item => {
+
       return(
         <div className='flex justify-between'>
           <p className='text-Cool-gray' >{item.title}</p>
-          <p className='font-medium text-Marine-blue' >+${item.monthly}/mo</p>
+          {change ? <p>+${item.yearly}/yr</p> : <p>+${item.monthly}/mo</p>}
         </div>
       )
     })
@@ -17,9 +23,12 @@ let GetAddOns = all.map(item => {
 
     let GetPlans = allPlans.map(item => {
           return(
-            <div className=''>
+            <div className='flex justify-between items-center border-b border-Light-gray py-1'>
+              <div>
               <p className='text-Marine-blue font-bold' >{item.title} (Monthly) </p>
-              <button className='text-Cool-gray underline decoration-2'>Change</button>
+              <button className='text-Cool-gray underline decoration-2' onClick={toggleChange}>Change</button>
+              </div>
+              {change ? <p className='font-bold'>+${item.yearly}/yr</p> : <p className='font-bold'>+${item.monthly}/mo</p>}
             </div>
           )
         })
@@ -38,12 +47,7 @@ let GetAddOns = all.map(item => {
 </p>
 
 <div className='mt-5 p-3 bg-Magnolia'>
-<div className="flex justify-between items-center border-b border-Light-gray py-1">
-  <div className=''>
     {GetPlans}
-  </div>
-  <p className='font-bold text-Marine-blue' >${total.monthly}/mo</p>
-</div>
   <div className='space-y-2 mt-3'>
     {GetAddOns}
   </div>
