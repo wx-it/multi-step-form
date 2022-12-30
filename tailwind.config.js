@@ -13,6 +13,7 @@ module.exports = {
 
     screens: {
       sm: '375px',
+      md: '500px'
     },
     colors: {
       'Marine-blue': 'hsl(213, 96%, 18%)',
@@ -29,7 +30,8 @@ module.exports = {
 
     extend: {
       backgroundImage: {
-        'sidebar': "url('/src/assets/images/bg-sidebar-mobile.svg')",
+        'mobileSidebar': "url('/src/assets/images/bg-sidebar-mobile.svg')",
+        'desktopSidebar': "url('/src/assets/images/bg-sidebar-desktop.svg')",
       }
     },
   },
