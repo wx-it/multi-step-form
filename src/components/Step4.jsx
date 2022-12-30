@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Link } from "react-router-dom"
 
 const Step4 = ({total, addOns, plans, toggleChange, change}) => {
   
@@ -8,7 +8,7 @@ let GetAddOns = all.map(item => {
 
       return(
         <div className='flex justify-between'>
-          <p className='text-Cool-gray' >{item.title}</p>
+          <p className='text-Cool-gray' key={item.id}  >{item.title}</p>
           {change ? <p>+${item.yearly}/yr</p> : <p>+${item.monthly}/mo</p>}
         </div>
       )
@@ -20,7 +20,7 @@ let GetAddOns = all.map(item => {
           return(
             <div className='flex justify-between items-center border-b border-Light-gray py-1'>
               <div>
-              <p className='text-Marine-blue font-bold' >{item.title} (Monthly) </p>
+              <p className='text-Marine-blue font-bold' key={item.id} >{item.title} (Monthly) </p>
               <button className='text-Cool-gray underline decoration-2' onClick={toggleChange}>Change</button>
               </div>
               {change ? <p className='font-bold'>+${item.yearly}/yr</p> : <p className='font-bold'>+${item.monthly}/mo</p>}
@@ -61,10 +61,10 @@ className='flex justify-between'
 >
     <button
       className="text-Cool-gray font-medium"
-    >Go Back</button>
+    > <Link to="/step3" >Go Back</Link> </button>
     <button
        className='border-2 bg-Purplish-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
-    >Confirm</button>
+    > <Link to="/step5" >Confirm</Link> </button>
 </div>
 
 

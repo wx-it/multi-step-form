@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 
 const Step1 = () => {
   return (
@@ -55,7 +55,7 @@ const Step1 = () => {
      <button
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
      >
-      Next Step
+      <Link to="/step2" >Next Step</Link>
       </button>
      </div>
     </div>

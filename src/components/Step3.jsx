@@ -1,8 +1,5 @@
-import React from 'react'
-import { useState } from 'react'
-import data from '../data'
 import Divs from './Divs'
-
+import { Link } from 'react-router-dom'
 
 const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}) => {
   
@@ -37,11 +34,11 @@ className='flex justify-between'
 >
     <button
       className="text-Cool-gray font-medium"
-    >Go Back</button>
+    > <Link to="/step2" >Go Back</Link> </button>
     <button
        onClick={()=>{getAll(); getSquares(); getBoxes();}}
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
-    >Next Step</button>
+    > <Link to="/step4" >Next Step</Link> </button>
 </div>
 
 

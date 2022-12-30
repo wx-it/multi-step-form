@@ -7,6 +7,7 @@ import Step5 from "./components/Step5";
 import data from "./data";
 import plansData from "./plansData";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   
@@ -117,27 +118,13 @@ function getSquares(){
       <SideBar />
       </div>
       <div className="absolute top-24 mx-5">
-      <Step1/>
-      <Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />
-      <Step3
-       time={time}
-       data={data}
-       squares={squares} 
-       toggleSquare={toggleSquare} 
-       getSquares={getSquares} 
-       getBoxes={getBoxes} 
-       getAll={getAll}
-       />
-      <Step4
-       total={total} 
-       addOns={addOns} 
-       plans={plans} 
-       toggle={toggle} 
-       time={time} 
-       toggleChange={toggleChange} 
-       change={change} 
-       />
-      <Step5  />
+      <Routes>
+      <Route path="/" element={<Step1/>} />
+      <Route path="/step2" element={<Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />} />
+      <Route path="/step3" element={<Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getSquares={getSquares} getBoxes={getBoxes} getAll={getAll}/>} />
+      <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
+      <Route path="step5" element={<Step5  />} />
+      </Routes>
 
       </div>
     </div>
