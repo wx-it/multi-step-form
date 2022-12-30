@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Step1 = () => {
+const Step1 = ({changeNumColor}) => {
   return (
     <div className="">
    <div className='bg-White py-8 px-6 rounded-lg shadow-xl'>
@@ -53,7 +53,8 @@ const Step1 = () => {
    
      <div>
      <button
-       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms absolute right-0'
+     onClick={changeNumColor}
+     className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms absolute right-0'
      >
       <Link to="/step2" >Next Step</Link>
       </button>

@@ -112,14 +112,20 @@ function getSquares(){
   })
 }
 
+const [color, setColor] = useState(false)
+
+function changeNumColor(){
+  setColor(color => !color)
+}
+
   return (
     <div className="relative">
       <div>
-      <SideBar />
+      <SideBar color={color} />
       </div>
       <div className="absolute top-24 mx-5">
       <Routes>
-      <Route path="/" element={<Step1/>} />
+      <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
       <Route path="/step2" element={<Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />} />
       <Route path="/step3" element={<Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getSquares={getSquares} getBoxes={getBoxes} getAll={getAll}/>} />
       <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
