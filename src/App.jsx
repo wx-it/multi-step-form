@@ -118,12 +118,15 @@ function changeNumColor(){
   setColor(color => !color)
 }
 
+//md:bg-desktopSidebar border md:w-full md:h-full md:bg-no-repeat md:rounded-xl md:left-0
+
   return (
-    <div className="relative md:flex md:justify-center ">
-      <div className="md:bg-desktopSidebar border md:auto md:bg-no-repeat">
+    <div className="relative md:flex md:justify-center md:items-center md:h-screen md:w-full md:bg-Light-blue ">
+      <div className="md:flex md:items-center md:px-4 md:py-4 md:pr-12 md:bg-White md:space-x-14 md:rounded-xl " >
+      <div className="">
       <SideBar color={color} />
       </div>
-      <div className="absolute top-24 mx-5 md:relative">
+      <div className="absolute top-24 mx-5 md:relative md:top-0 md:m-0 md:shadow-none">
       <Routes>
       <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
       <Route path="/step2" element={<Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />} />
@@ -132,6 +135,7 @@ function changeNumColor(){
       <Route path="step5" element={<Step5  />} />
       </Routes>
 
+      </div>
       </div>
     </div>
   );

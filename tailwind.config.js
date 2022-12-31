@@ -8,7 +8,8 @@ module.exports = {
     fontSize: {
       sm: '13px',
       ms: '15px',
-      xl: '24px'
+      xl: '24px',
+      xxl : '32px'
     },
 
     screens: {
