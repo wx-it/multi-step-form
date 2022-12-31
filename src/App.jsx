@@ -119,11 +119,11 @@ function changeNumColor(){
 }
 
   return (
-    <div className="relative">
-      <div>
+    <div className="relative md:flex md:justify-center ">
+      <div className="md:bg-desktopSidebar border md:auto md:bg-no-repeat">
       <SideBar color={color} />
       </div>
-      <div className="absolute top-24 mx-5">
+      <div className="absolute top-24 mx-5 md:relative">
       <Routes>
       <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
       <Route path="/step2" element={<Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />} />
