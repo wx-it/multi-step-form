@@ -21,7 +21,7 @@ const Divs = ({data, time, toggle, on, id}) => {
   return (
     <div onClick={()=>{toggle(id)}} 
     className={on ? 'border border-Purplish-blue rounded-md flex items-center justify-between py-2 px-3 md:w-[450px] md:py-3' 
-    : 'border border-Light-gray rounded-md flex items-center justify-between py-2 px-3 md:w-[450px] md:py-3 hover:border-Purplish-blue'}>
+    : 'border border-Light-gray rounded-md flex items-center justify-between py-2 px-3 md:w-[450px] md:py-3 hover:border-Purplish-blue md:cursor-pointer'}>
  
  <div className='flex items-center justify-between space-x-4 md:space-x-6'>
  <div className={on ? "bg-Purplish-blue border-Cool-gray border w-5 h-5 rounded-md p-1 flex items-center justify-center"
