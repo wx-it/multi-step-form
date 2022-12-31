@@ -23,11 +23,12 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
       }
   }
     return(
-      <div id='box' onClick={(e)=>{toggleBoxes(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4'>
-  <div>
+      <div id='box' onClick={(e)=>{toggleBoxes(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
+      md:flex-col md:items-start md:justify-start md:space-x-0 md:space-y-10 md:py-4 md-px-0 md:w-[140px] md:h-42 md:first:mt-2'>
+  <div className=''>
     <img src={data.image} alt="" />
   </div>
-    <div className='block'>
+    <div className='block md:flex md:flex-col md:items-start md:justify-start md:w-full'>
      <h3  className='font-medium text-Marine-blue' >{data.title}</h3>
      <Price/>
      {time && <p className='text-sm text-Marine-blue font-normal'>2 months free</p>}
@@ -38,23 +39,23 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
   })
 
   return (
-  <div>    
-  <div className='bg-White py-8 px-4 rounded-lg shadow-xl'>
+  <div className='md:space-y-16'>    
+  <div className='bg-White py-8 px-4 rounded-lg shadow-xl md:shadow-none'>
     
   <h2
-    className='text-Marine-blue text-xl font-bold'
+    className='text-Marine-blue text-xl font-bold md:text-xxl'
   >
     Select your plan</h2>
   <p
-   className="text-Cool-gray w-72 my-1"
+   className="text-Cool-gray w-72 my-1 md:w-auto"
   >You have the option of monthly or yearly billing.</p>
 
-<div id='boxes' className='boxes space-y-2 mt-5'>
+<div id='boxes' className='boxes space-y-2 mt-5 md:flex md:items-center md:justify-between md:space-x-5 md:mt-11'>
 {getData}
 
 </div>
 
-<div className='flex items-center justify-center space-x-3 mt-8'>
+<div className='flex items-center justify-center space-x-3 mt-8 md:mt-11'>
   
     <span className={time ? 'text-Cool-gray font-bold text-ms' : 'font-bold text-Marine-blue text-ms'} >Monthly</span> 
     
@@ -70,7 +71,7 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
   </div>
 
 <div 
-className='flex justify-between'
+className='flex justify-between items-center'
 >
     <button
       className="text-Cool-gray font-medium"
