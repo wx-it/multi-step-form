@@ -46,7 +46,7 @@ useEffect(() => {
     return(
        <div key={item.n} className="md:flex md:items-center md:justify-start md:p-5 md:pb-0 md:pr-16 md:space-x-3 md:m-0 md:w-full md:first:pl-8">
        <p onClick={getWidth}
-         className='border-White border rounded-full py-2 px-3 md:px-[15px] text-White text-bold text-sm font-medium'
+         className='border-White border rounded-full py-2 px-[15px] text-White text-bold text-sm font-medium'
         >{item.n}</p>
        {width >= 500 ? 
        <div className=""> 

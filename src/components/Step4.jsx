@@ -31,7 +31,7 @@ let GetAddOns = all.map(item => {
 
   return (
     <div className='md:space-y-16'>
-  <div  className='bg-White py-8 px-4 rounded-lg shadow-xl md:shadow-none'>
+  <div  className='bg-White py-8 px-6 rounded-lg shadow-xl md:shadow-none'>
   <h2
      className='text-Marine-blue text-xl font-bold md:text-xxl'>
     Finishing up

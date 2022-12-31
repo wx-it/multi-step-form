@@ -118,7 +118,6 @@ function changeNumColor(){
   setColor(color => !color)
 }
 
-//md:bg-desktopSidebar border md:w-full md:h-full md:bg-no-repeat md:rounded-xl md:left-0
 
   return (
     <div className="relative md:flex md:justify-center md:items-center md:h-screen md:w-full md:bg-Light-blue ">

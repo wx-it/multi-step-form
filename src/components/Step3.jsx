@@ -17,7 +17,7 @@ const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}
 
   return (
     <div className='md:space-y-16'>
-      <div className="bg-White py-8 px-4 rounded-lg shadow-xl md:shadow-none">
+      <div className="bg-White py-8 px-6 rounded-lg shadow-xl md:shadow-none">
       <h3
        className='text-Marine-blue text-xl font-bold md:text-xxl'
       >Pick add-ons</h3>
