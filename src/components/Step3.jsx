@@ -16,13 +16,13 @@ const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}
   })
 
   return (
-    <div>
-      <div className="bg-White py-8 px-4 rounded-lg shadow-xl">
+    <div className='md:space-y-16'>
+      <div className="bg-White py-8 px-4 rounded-lg shadow-xl md:shadow-none">
       <h3
-       className='text-Marine-blue text-xl font-bold'
+       className='text-Marine-blue text-xl font-bold md:text-xxl'
       >Pick add-ons</h3>
          <p
-       className="text-Cool-gray w-72 my-1"   
+       className="text-Cool-gray w-72 my-1 md:w-auto"   
          >Add-ons help enhance your gaming experience.</p>
 <div className='space-y-2 mt-5'>
 {getData}
@@ -30,7 +30,7 @@ const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}
       </div>
 
       <div 
-className='flex justify-between'
+className='flex justify-between items-center'
 >
     <button
       className="text-Cool-gray font-medium"

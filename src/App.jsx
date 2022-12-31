@@ -122,7 +122,7 @@ function changeNumColor(){
 
   return (
     <div className="relative md:flex md:justify-center md:items-center md:h-screen md:w-full md:bg-Light-blue ">
-      <div className="md:flex md:items-center md:px-4 md:py-4 md:pr-12 md:bg-White md:space-x-14 md:rounded-xl " >
+      <div className="md:flex md:items-center md:px-4 md:py-4 md:pr-28 md:bg-White md:space-x-14 md:rounded-xl " >
       <div className="">
       <SideBar color={color} />
       </div>
