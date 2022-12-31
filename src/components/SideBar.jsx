@@ -44,18 +44,22 @@ useEffect(() => {
 
   let getN = numbers.map(item => { 
     return(
-      <div key={item.n} >
-    <span onClick={getWidth}
-    className='border-White border rounded-full py-2 px-3 text-White text-bold text-sm font-medium'
-    > {item.n} </span>
-    {width >= 500 ? <div> <p> {item.desktopStep} </p> <p> {item.desktopStepName} </p> </div> : null }
+       <div key={item.n} className="md:flex md:items-center md:justify-start md:p-5 md:space-x-3 md:m-0 md:w-full">
+       <span onClick={getWidth}
+         className='border-White border rounded-full py-2 px-3 md:px-[15px] text-White text-bold text-sm font-medium'
+        > {item.n} </span>
+       {width >= 500 ? 
+       <div className=""> 
+          <p className="text-Cool-gray text-sm"> {item.desktopStep} </p> 
+          <p className="text-White font-medium"> {item.desktopStepName} </p> 
+        </div> : null }
   </div>    
     )
   })
 
   return (
     <div className='bg-mobileSidebar h-screen w-full bg-no-repeat md:bg-none'>
-  <div className='flex justify-center pt-10 space-x-3 md:flex-col md:justify-between md:items-start '>
+  <div className='flex justify-center pt-10 space-x-3 md:flex-col'>
   {getN}
   </div>
 </div>
