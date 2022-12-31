@@ -20,7 +20,7 @@ const Step1 = ({changeNumColor}) => {
   <input
    type="text" 
    placeholder='e.g. Stephen King'
-   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg'
+   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg md:focus:outline-Purplish-blue md:cursor-pointer'
    />
   </div>
   <div className='flex flex-col my-5'>
@@ -32,7 +32,7 @@ const Step1 = ({changeNumColor}) => {
   <input
    type="text"
    placeholder="e.g. stephenking@lorem.com"
-   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg'
+   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg md:focus:outline-Purplish-blue md:cursor-pointer'
    />
   
   </div>
@@ -45,7 +45,7 @@ const Step1 = ({changeNumColor}) => {
   <input
    type="text"
    placeholder="e.g. +1 234 567 890"
-   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg'
+   className='border border-Light-gray py-2 px-3 pl-5 font-normal rounded text-Cool-gray md:py-3 md:rounded-lg md:focus:outline-Purplish-blue md:cursor-pointer'
    />
   
   </div>
@@ -55,7 +55,7 @@ const Step1 = ({changeNumColor}) => {
       <div></div>
      <button
      onClick={changeNumColor}
-     className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
+     className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms md:cursor-pointer'
      >
       <Link to="/step2" >Next Step</Link>
       </button>
