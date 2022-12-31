@@ -24,7 +24,7 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
   }
     return(
       <div id='box' onClick={(e)=>{toggleBoxes(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
-      md:flex-col md:items-start md:justify-start md:space-x-0 md:space-y-10 md:py-4 md-px-0 md:w-[140px] md:h-42 md:first:mt-2'>
+      md:flex-col md:items-start md:justify-start md:space-x-0 md:space-y-10 md:py-4 md-px-0 md:w-[140px] md:h-42 md:first:mt-2 md:hover:border-Purplish-blue md:cursor-pointer'>
   <div className=''>
     <img src={data.image} alt="" />
   </div>
@@ -74,10 +74,10 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
 className='flex justify-between items-center'
 >
     <button
-      className="text-Cool-gray font-medium"
+      className="text-Cool-gray font-medium md:cursor-pointer"
     > <Link to="/" >Go Back</Link> </button>
     <button
-       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
+       className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms md:cursor-pointer'
     > <Link to="/step3" >Next Step</Link> </button>
 </div>
 
