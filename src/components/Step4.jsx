@@ -14,7 +14,7 @@ let GetAddOns = all.map(item => {
       )
     })
 
-    let allPlans = plans.map(item => item).filter(item => item.title !== undefined)
+    let allPlans = plans.map(item => item).filter(item => item.title !== undefined).slice(-1)
 
     let GetPlans = allPlans.map(item => {
           return(

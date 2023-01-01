@@ -30,22 +30,23 @@ function App() {
     setTime(time => !time)
   }
 
+
   const toggleBoxes = function(e, id) {    
     const theBoxes = e.target.closest('.boxes');
     const theBox = e.target.closest('.box');
     const all = theBoxes.querySelectorAll('.box')
-    if(!theBoxes)return; 
+    if(!theBoxes)return;
     all.forEach((box) => {
       box.classList.remove("border-Purplish-blue")
       box.classList.add("border-Light-gray")
-      return setBoxes(prevBoxes => {
-        return prevBoxes.map((box) => {
-            return box.id === id ? {...box, on: !box.on} : box
-        })
-      })
     });
     theBox.classList.add("border-Purplish-blue");
     theBox.classList.remove("border-Light-gray")
+    return setBoxes(prevBoxes => {
+      return prevBoxes.map((box, e) => {
+          return box.id === id ? {...box, on: !box.on} : box
+      })
+    })
 }
    
 function toggleSquare(id) {
@@ -61,8 +62,8 @@ function getAll() {
 
 function getMonthlyTotal(id){
   let allItems = []
-  let s = squares.map(square => square.on ? allItems.push(square.monthly) : square)
-  let b = boxes.map(box => box.on ? allItems.push(box.monthly) : box)
+  let s = squares.map(square => square.on ? allItems.push(square.monthly) : null)
+  let b = boxes.map(box => box.on ? allItems.push(box.monthly) : null).filter(item => item !== null)
   let totalMonthly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
@@ -99,7 +100,7 @@ getYearlyTotal()
 function getBoxes(){
   return setPlans(prevPlans => {
     return boxes.map((box=>{
-     return box.on ? box : prevPlans.push(box) ; 
+      return box.on ? box : prevPlans.push(box)  
     }))
   })
 }
