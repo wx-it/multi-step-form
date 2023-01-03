@@ -1,10 +1,10 @@
 import Divs from './Divs'
 import { Link } from 'react-router-dom'
 
-const Step3 = ({time, data, squares, toggleSquare, getSquares, getBoxes, getAll}) => {
+const Step3 = ({time, data, addOnsData, toggleSquare, getaddonsData, getplansData, getAll}) => {
   
 
-  const getData = squares.map((data)=>{
+  const getData = addOnsData.map((data)=>{
     return <Divs 
                   key={data.id} 
                   id={data.id}
@@ -36,7 +36,7 @@ className='flex justify-between items-center'
       className="text-Cool-gray font-medium"
     > <Link to="/step2" >Go Back</Link> </button>
     <button
-       onClick={()=>{getAll(); getSquares(); getBoxes();}}
+       onClick={()=>{getAll(); getaddonsData(); getplansData();}}
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
     > <Link to="/step4" >Next Step</Link> </button>
 </div>

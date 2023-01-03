@@ -4,16 +4,16 @@ import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
 import Step4 from "./components/Step4";
 import Step5 from "./components/Step5";
-import data from "./data";
-import plansData from "./plansData";
+import data from "./assets/data";
+import thePlansData from "./assets/plansData";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   
+  const [plansData, setPlansData] = useState(thePlansData)
   const [time, setTime] = useState(false)
-  const [boxes, setBoxes] = useState(plansData)
-  const [squares, setSquares] = useState(data)
+  const [addonsData, setAddonsData] = useState(data)
   const [total, setTotal] = useState({
     monthly: '',
     yearly:''
@@ -31,27 +31,31 @@ function App() {
   }
 
 
-  const toggleBoxes = function(e, id) {    
-    const theBoxes = e.target.closest('.boxes');
+  const toggleplansData = function(e, id) {    
+    const theplansData = e.target.closest('.plansData');
     const theBox = e.target.closest('.box');
-    const all = theBoxes.querySelectorAll('.box')
-    if(!theBoxes)return;
+    const all = theplansData.querySelectorAll('.box')
+    if(!theplansData)return;
     all.forEach((box) => {
       box.classList.remove("border-Purplish-blue")
       box.classList.add("border-Light-gray")
     });
     theBox.classList.add("border-Purplish-blue");
     theBox.classList.remove("border-Light-gray")
-    return setBoxes(prevBoxes => {
-      return prevBoxes.map((box, e) => {
-          return box.id === id ? {...box, on: !box.on} : box
-      })
-    })
 }
+
+const [currentBoxId, setCurrentBoxId] = useState(
+  (plansData[0] && plansData[0].id) || ""
+)
+
+function toggleState(e, id) {
+      if (e.currentTarget.classList.contains('border-Purplish-blue')) {
+      } 
+    }
    
 function toggleSquare(id) {
-  setSquares(prevSquares => {
-      return prevSquares.map((square) => {
+  setAddonsData(prevaddonsData => {
+      return prevaddonsData.map((square) => {
           return square.id === id ? {...square, on: !square.on} : square
       })
   })
@@ -62,8 +66,8 @@ function getAll() {
 
 function getMonthlyTotal(id){
   let allItems = []
-  let s = squares.map(square => square.on ? allItems.push(square.monthly) : null)
-  let b = boxes.map(box => box.on ? allItems.push(box.monthly) : null).filter(item => item !== null)
+  let s = addonsData.map(square => square.on ? allItems.push(square.monthly) : null)
+  let b = plansData.map(box => box.on ? allItems.push(box.monthly) : null).filter(item => item !== null)
   let totalMonthly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
@@ -78,8 +82,8 @@ function getMonthlyTotal(id){
 
 function getYearlyTotal(id){
   let allItems = []
-  let s = squares.map(square => square.on ? allItems.push(square.yearly) : square)
-  let b = boxes.map(box => box.on ? allItems.push(box.yearly) : box)
+  let s = addonsData.map(square => square.on ? allItems.push(square.yearly) : square)
+  let b = plansData.map(box => box.on ? allItems.push(box.yearly) : box)
   let totalYearly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
@@ -97,17 +101,17 @@ getYearlyTotal()
 
 }
 
-function getBoxes(){
+function getplansData(){
   return setPlans(prevPlans => {
-    return boxes.map((box=>{
+    return plansData.map((box=>{
       return box.on ? box : prevPlans.push(box)  
     }))
   })
 }
 
-function getSquares(){
+function getaddonsData(){
   return setAddons(preAddOns => {
-    return squares.map((square=>{
+    return addonsData.map((square=>{
      return square.on ? square : preAddOns.push(square) ; 
     }))
   })
@@ -129,8 +133,8 @@ function changeNumColor(){
       <div className="absolute top-24 mx-5 md:relative md:top-0 md:m-0 md:shadow-none">
       <Routes>
       <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
-      <Route path="/step2" element={<Step2 time={time} toggle={toggle} boxes={boxes} toggleBoxes={toggleBoxes} />} />
-      <Route path="/step3" element={<Step3 time={time} data={data} squares={squares} toggleSquare={toggleSquare} getSquares={getSquares} getBoxes={getBoxes} getAll={getAll}/>} />
+      <Route path="/step2" element={<Step2 time={time} toggle={toggle} plansData={plansData} toggleState={toggleState} toggleplansData={toggleplansData} />} />
+      <Route path="/step3" element={<Step3 time={time} data={data} addonsData={addonsData} toggleSquare={toggleSquare} getaddonsData={getaddonsData} getplansData={getplansData} getAll={getAll}/>} />
       <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
       <Route path="step5" element={<Step5  />} />
       </Routes>

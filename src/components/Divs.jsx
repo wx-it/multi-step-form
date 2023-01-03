@@ -1,4 +1,4 @@
-import data from '../data'
+import data from '../assets/data'
 import checkMark from '../assets/images/icon-checkmark.svg'
 import { useState } from 'react'
 

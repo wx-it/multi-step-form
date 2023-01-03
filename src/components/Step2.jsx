@@ -2,15 +2,15 @@ import iconArcade from '../assets/images/icon-arcade.svg'
 import iconAdvanced from '../assets/images/icon-advanced.svg'
 import iconPro from '../assets/images/icon-pro.svg'
 import { useState } from 'react'
-import plansData from '../plansData'
-import data from '../data'
+import plansData from '../assets/plansData'
+import data from '../assets/data'
 import { Link } from 'react-router-dom'
 
-const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
+const Step2 = ({time, toggle, toggleBoxes,plansData, getPlansData, toggleState}) => {
   
 
   
-  const getData = boxes.map(data =>{
+  const getData = plansData.map(data =>{
     function Price(){
       if(time=== true){
           return(
@@ -23,7 +23,7 @@ const Step2 = ({time, toggle, toggleBoxes, boxes}) => {
       }
   }
     return(
-      <div id='box' onClick={(e)=>{toggleBoxes(e, data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
+      <div id='box' onClick={(e)=>{toggleBoxes(e, data.id); toggleState(e,data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
       md:flex-col md:items-start md:justify-start md:space-x-0 md:space-y-10 md:py-4 md-px-0 md:w-[140px] md:h-42 md:first:mt-2 md:hover:border-Purplish-blue md:cursor-pointer'>
   <div className=''>
     <img src={data.image} alt="" />

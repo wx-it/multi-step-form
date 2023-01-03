@@ -1,6 +1,6 @@
-import arcade from './assets/images/icon-arcade.svg'
-import advanced from './assets/images/icon-advanced.svg'
-import pro from './assets/images/icon-pro.svg'
+import arcade from './images/icon-arcade.svg'
+import advanced from './images/icon-advanced.svg'
+import pro from './images/icon-pro.svg'
 
 
 export default [
