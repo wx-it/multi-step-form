@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { nanoid } from 'nanoid'
 
 const Step4 = ({total, addOns, plans, toggleChange, change}) => {
   
@@ -7,8 +8,8 @@ const Step4 = ({total, addOns, plans, toggleChange, change}) => {
 let GetAddOns = all.map(item => {
 
       return(
-        <div className='flex justify-between'>
-          <p className='text-Cool-gray md:text-ms' key={item.id}  >{item.title}</p>
+        <div className='flex justify-between' key={nanoid()}>
+          <p className='text-Cool-gray md:text-ms' key={nanoid()}  >{item.title}</p>
           {change ? <p>+${item.yearly}/yr</p> : <p>+${item.monthly}/mo</p>}
         </div>
       )
@@ -18,9 +19,9 @@ let GetAddOns = all.map(item => {
 
     let GetPlans = allPlans.map(item => {
           return(
-            <div className='flex justify-between items-center border-b border-Light-gray py-1 md:pb-5'>
+            <div className='flex justify-between items-center border-b border-Light-gray py-1 md:pb-5' key={nanoid()}>
               <div>
-              <p className='text-Marine-blue font-medium' key={item.id} >{item.title} (Monthly) </p>
+              <p className='text-Marine-blue font-medium'>{item.title} (Monthly) </p>
               <button className='text-Cool-gray underline decoration-2 md:focus:text-Purplish-blue md:text-sm' onClick={toggleChange}>Change</button>
               </div>
               {change ? <p className='font-bold'>+${item.yearly}/yr</p> : <p className='font-bold'>+${item.monthly}/mo</p>}

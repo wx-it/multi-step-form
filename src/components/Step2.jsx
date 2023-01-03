@@ -1,12 +1,6 @@
-import iconArcade from '../assets/images/icon-arcade.svg'
-import iconAdvanced from '../assets/images/icon-advanced.svg'
-import iconPro from '../assets/images/icon-pro.svg'
-import { useState } from 'react'
-import plansData from '../assets/plansData'
-import data from '../assets/data'
 import { Link } from 'react-router-dom'
 
-const Step2 = ({time, toggle, toggleplansData,plansData, getPlansData, toggleState}) => {
+const Step2 = ({time, toggle, toggleplansData ,plansData , getplansData , toggleState}) => {
   
 
   
@@ -76,7 +70,7 @@ className='flex justify-between items-center'
     <button
       className="text-Cool-gray font-medium md:cursor-pointer"
     > <Link to="/" >Go Back</Link> </button>
-    <button
+    <button onClick={getplansData}
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms md:cursor-pointer'
     > <Link to="/step3" >Next Step</Link> </button>
 </div>

@@ -1,7 +1,7 @@
 import Divs from './Divs'
 import { Link } from 'react-router-dom'
 
-const Step3 = ({time, addonsData, toggleAddons, getaddonsData, getplansData, getAll}) => {
+const Step3 = ({time, addonsData, toggleAddons, getaddonsData, getAll, resetState}) => {
   
 
   const getData = addonsData.map((data)=>{
@@ -32,11 +32,11 @@ const Step3 = ({time, addonsData, toggleAddons, getaddonsData, getplansData, get
       <div 
 className='flex justify-between items-center'
 >
-    <button
+    <button onClick={resetState}
       className="text-Cool-gray font-medium"
     > <Link to="/step2" >Go Back</Link> </button>
     <button
-       onClick={()=>{getAll(); getaddonsData(); getplansData();}}
+       onClick={()=>{getAll(); getaddonsData();}}
        className='border-2 bg-Marine-blue text-White text-bold px-4 py-2 rounded-md my-4 font-normal text-ms'
     > <Link to="/step4" >Next Step</Link> </button>
 </div>

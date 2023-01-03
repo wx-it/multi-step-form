@@ -22,6 +22,11 @@ function App() {
   const [plans, setPlans] = useState([])
   const [change, setChange] = useState(false)
 
+  //reset
+  const resetState = () => {
+    setPlansData(thePlansData)
+  };
+
 
   //...................TOGGLE...FUNCTIONS.......................................
   
@@ -93,10 +98,10 @@ function getaddonsData(){
 
 function getAll() {
 
-function getMonthlyTotal(id){
+function getMonthlyTotal(){
   let allItems = []
-  let s = addonsData.map(square => square.on ? allItems.push(square.monthly) : null)
-  let b = plansData.map(box => box.on ? allItems.push(box.monthly) : null).filter(item => item !== null)
+  addonsData.map(square => square.on ? allItems.push(square.monthly) : null)
+  plansData.map(box => box.on ? allItems.push(box.monthly) : null).filter(item => item !== null)
   let totalMonthly =  allItems.reduce((total, item) =>{
     return item + total
   }, 0)
@@ -147,8 +152,8 @@ function changeNumColor(){
       <div className="absolute top-24 mx-5 md:relative md:top-0 md:m-0 md:shadow-none">
       <Routes>
       <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
-      <Route path="/step2" element={<Step2 time={time} toggle={toggle} plansData={plansData} toggleState={toggleState} toggleplansData={toggleplansData} />} />
-      <Route path="/step3" element={<Step3 time={time} data={data} addonsData={addonsData} toggleAddons={toggleAddons} getaddonsData={getaddonsData} getplansData={getplansData} getAll={getAll}/>} />
+      <Route path="/step2" element={<Step2 time={time} toggle={toggle} plansData={plansData} toggleState={toggleState} toggleplansData={toggleplansData} getplansData={getplansData} />} />
+      <Route path="/step3" element={<Step3 time={time} resetState={resetState} data={data} addonsData={addonsData} toggleAddons={toggleAddons} getaddonsData={getaddonsData} getAll={getAll}/>} />
       <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
       <Route path="step5" element={<Step5  />} />
       </Routes>
