@@ -3,9 +3,6 @@ import checkMark from '../assets/images/icon-checkmark.svg'
 import { useState } from 'react'
 
 const Divs = ({data, time, toggle, on, id}) => {
-
-    let monthly = data.monthly
-    let yearly = data.yearly
     function Price(){
         if(time=== true){
             return(

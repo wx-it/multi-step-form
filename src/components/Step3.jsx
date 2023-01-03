@@ -1,15 +1,15 @@
 import Divs from './Divs'
 import { Link } from 'react-router-dom'
 
-const Step3 = ({time, data, addOnsData, toggleSquare, getaddonsData, getplansData, getAll}) => {
+const Step3 = ({time, addonsData, toggleAddons, getaddonsData, getplansData, getAll}) => {
   
 
-  const getData = addOnsData.map((data)=>{
+  const getData = addonsData.map((data)=>{
     return <Divs 
                   key={data.id} 
                   id={data.id}
                   on={data.on}
-                  toggle={toggleSquare}
+                  toggle={toggleAddons}
                   data={data}
                   time={time}
                   />

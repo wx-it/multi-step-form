@@ -22,6 +22,9 @@ function App() {
   const [plans, setPlans] = useState([])
   const [change, setChange] = useState(false)
 
+
+  //...................TOGGLE...FUNCTIONS.......................................
+  
   function toggleChange() {
     setChange(prevChange => !prevChange)
   }
@@ -31,8 +34,10 @@ function App() {
   }
 
 
+  //...................STEP2...FUNCTIONS.......................................
+
   const toggleplansData = function(e, id) {    
-    const theplansData = e.target.closest('.plansData');
+    const theplansData = e.target.closest('.boxes');
     const theBox = e.target.closest('.box');
     const all = theplansData.querySelectorAll('.box')
     if(!theplansData)return;
@@ -44,21 +49,49 @@ function App() {
     theBox.classList.remove("border-Light-gray")
 }
 
-const [currentBoxId, setCurrentBoxId] = useState(
-  (plansData[0] && plansData[0].id) || ""
-)
-
-function toggleState(e, id) {
-      if (e.currentTarget.classList.contains('border-Purplish-blue')) {
-      } 
+function toggleState(id) {
+      return setPlansData(plansData =>{
+        return plansData.map(plan =>{
+          return plan.id === id ? {...plan, on: !plan.on} : plan
+        })
+      }) 
     }
-   
-function toggleSquare() {
-  
+
+
+    
+function getplansData(){
+  return setPlans(prevPlans => {
+    return plansData.map((box=>{
+      return box.on ? box : prevPlans.push(box)  ;
+    }))
+  })
 }
 
-function getAll() {
+  //...................STEP3...FUNCTIONS.......................................
   
+function toggleAddons(id) {
+  return setAddonsData(addOns =>{
+    return addOns.map(addon =>{
+      return addon.id === id ? {...addon, on: !addon.on} : addon
+    })
+  })
+}
+
+
+
+function getaddonsData(){
+  return setAddons(preAddOns => {
+    return addonsData.map((square=>{
+     return square.on ? square : preAddOns.push(square) ; 
+    }))
+  })
+}
+
+
+
+  //...................TOTAL...PRICE...FUNCTIONS.......................................
+
+function getAll() {
 
 function getMonthlyTotal(id){
   let allItems = []
@@ -97,21 +130,6 @@ getYearlyTotal()
 
 }
 
-function getplansData(){
-  return setPlans(prevPlans => {
-    return plansData.map((box=>{
-      return box.on ? box : prevPlans.push(box)  
-    }))
-  })
-}
-
-function getaddonsData(){
-  return setAddons(preAddOns => {
-    return addonsData.map((square=>{
-     return square.on ? square : preAddOns.push(square) ; 
-    }))
-  })
-}
 
 const [color, setColor] = useState(false)
 
@@ -130,7 +148,7 @@ function changeNumColor(){
       <Routes>
       <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
       <Route path="/step2" element={<Step2 time={time} toggle={toggle} plansData={plansData} toggleState={toggleState} toggleplansData={toggleplansData} />} />
-      <Route path="/step3" element={<Step3 time={time} data={data} addonsData={addonsData} toggleSquare={toggleSquare} getaddonsData={getaddonsData} getplansData={getplansData} getAll={getAll}/>} />
+      <Route path="/step3" element={<Step3 time={time} data={data} addonsData={addonsData} toggleAddons={toggleAddons} getaddonsData={getaddonsData} getplansData={getplansData} getAll={getAll}/>} />
       <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
       <Route path="step5" element={<Step5  />} />
       </Routes>

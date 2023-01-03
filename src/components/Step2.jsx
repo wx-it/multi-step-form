@@ -23,7 +23,7 @@ const Step2 = ({time, toggle, toggleplansData,plansData, getPlansData, toggleSta
       }
   }
     return(
-      <div id='box' onClick={(e)=>{toggleplansData(e, data.id); toggleState(e,data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
+      <div id='box' onClick={(e)=>{toggleplansData(e); toggleState(data.id)}} key={data.id} className='box flex border border-Light-gray rounded-lg items-center space-x-4 py-2 p-4 
       md:flex-col md:items-start md:justify-start md:space-x-0 md:space-y-10 md:py-4 md-px-0 md:w-[140px] md:h-42 md:first:mt-2 md:hover:border-Purplish-blue md:cursor-pointer'>
   <div className=''>
     <img src={data.image} alt="" />
