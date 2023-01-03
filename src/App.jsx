@@ -53,12 +53,8 @@ function toggleState(e, id) {
       } 
     }
    
-function toggleSquare(id) {
-  setAddonsData(prevaddonsData => {
-      return prevaddonsData.map((square) => {
-          return square.id === id ? {...square, on: !square.on} : square
-      })
-  })
+function toggleSquare() {
+  
 }
 
 function getAll() {
