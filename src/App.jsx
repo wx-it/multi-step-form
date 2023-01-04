@@ -22,7 +22,62 @@ function App() {
   const [plans, setPlans] = useState([])
   const [change, setChange] = useState(false)
 
-  //reset
+
+  //..................EMAIL....ERRORS.............................................
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
+
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  const handleChange = event => {
+    if (!isValidEmail(event.target.value)) {
+      setError('email is invalid');
+    } else {
+      setError(null);
+    }
+
+    setEmail(event.target.value);
+  };
+
+  //....................NAME.........ERROR....................................
+  const[name, setName] = useState('')
+  const [nameError, setNameError] = useState(null);
+
+  const handleChangeName = event => {
+    if (name.trim().length !== 0) {
+      setNameError('name is invalid');
+    } else {
+      setNameError(null);
+    }
+
+    setName(event.target.value);
+  };
+
+  //.........................NUMBER.........ERROR........................
+  const[number, setNumber] = useState('')
+  const [numberError, setNumberError] = useState(null);
+
+  function isNumber(str) {
+    if (str.trim() === '') {
+      return false;
+    }
+  
+    return !isNaN(str);
+  }
+
+  const handleChangeNumber = event => {
+    setNumber(event.target.value);
+  
+    if (isNumber(number)) {
+      setNumberError(null);
+    } else {
+      setNumberError('number is invalid');
+    }
+
+  };
+  //...................RESET...PLANS...STATE...............................
   const resetState = () => {
     setPlansData(thePlansData)
   };
@@ -151,10 +206,10 @@ function changeNumColor(){
       </div>
       <div className="absolute top-24 mx-5 md:relative md:top-0 md:m-0 md:shadow-none">
       <Routes>
-      <Route path="/" element={<Step1 changeNumColor={changeNumColor} />} />
+      <Route path="/" element={<Step1 changeNumColor={changeNumColor} isValidEmail={isValidEmail} handleChange={handleChange} handleChangeName={handleChangeName} name={name} nameError={nameError} email={email} error={error} number={number} numberError={numberError} handleChangeNumber={handleChangeNumber} />} />
       <Route path="/step2" element={<Step2 time={time} toggle={toggle} plansData={plansData} toggleState={toggleState} toggleplansData={toggleplansData} getplansData={getplansData} />} />
-      <Route path="/step3" element={<Step3 time={time} resetState={resetState} data={data} addonsData={addonsData} toggleAddons={toggleAddons} getaddonsData={getaddonsData} getAll={getAll}/>} />
-      <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggle={toggle} time={time} toggleChange={toggleChange} change={change}/>} />
+      <Route path="/step3" element={<Step3 time={time} resetState={resetState} addonsData={addonsData} toggleAddons={toggleAddons} getaddonsData={getaddonsData} getAll={getAll}/>} />
+      <Route path="/step4" element={<Step4 total={total} addOns={addOns} plans={plans} toggleChange={toggleChange} change={change}/>} />
       <Route path="step5" element={<Step5  />} />
       </Routes>
 
